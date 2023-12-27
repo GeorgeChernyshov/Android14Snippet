@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Android14Snippet-post34</string>
+
+    <!-- core screen -->
+    <string name="core_alarm_hint_allow">Alarm should start</string>
+    <string name="core_alarm_hint_restrict">Alarm should be not permitted to start</string>
+    <string name="core_alarm_start">Start the alarm</string>
+    <string name="core_kill_background_process_allow">You can kill any process of any app</string>
+    <string name="core_kill_background_process_button">Try to kill an app</string>
+    <string name="core_kill_background_process_restrict">You can only kill your own processes</string>
+    <string name="core_kill_background_process_title">Try to kill another apps background processes</string>
+
+    <!-- screen labels -->
+    <string name="label_core">Core Functionality</string>
+</resources>
