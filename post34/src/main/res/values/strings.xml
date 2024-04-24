@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Android14Snippet-post34</string>
 
+    <!-- button labels -->
+    <string name="button_go_next">Go Next</string>
+
     <!-- core screen -->
     <string name="core_alarm_hint_allow">Alarm should start</string>
     <string name="core_alarm_hint_restrict">Alarm should be not permitted to start</string>
@@ -9,7 +12,35 @@
     <string name="core_kill_background_process_button">Try to kill an app</string>
     <string name="core_kill_background_process_restrict">You can only kill your own processes</string>
     <string name="core_kill_background_process_title">Try to kill another apps background processes</string>
+    <string name="core_mlock_allow">You can lock up to 64 Mb of memory</string>
+    <string name="core_mlock_button">Lock</string>
+    <string name="core_mlock_hint">Try locking 128Kb of memory</string>
+    <string name="core_mlock_restrict">You should be restricted to 64 Kb of memory</string>
+
+    <!-- grammar -->
+    <string name="grammar_title">A gendered string</string>
+    <string name="grammar_gendered_text">Your device does not support gendered strings</string>
+
+    <!-- notifications -->
+    <string name="notification_channel_name">Notification Channel</string>
+    <string name="notification_channel_description">Channel description</string>
+    <string name="notification_reply">Reply Text. Refresh to check</string>
+    <string name="notification_title">My Notification</string>
+    <string name="notification_text">Notification text</string>
+
+    <!-- user experience -->
+    <string name="user_experience_info_data">Data safety information is more accessible in Android 14 through notifications</string>
+    <string name="user_experience_info_font">Font now scales up to 200%</string>
+    <string name="user_experience_notification_button">Send Non-dismissible Notification</string>
+    <string name="user_experience_notification_hint_dismiss">Notifications should still be dismissible in some cases</string>
+    <string name="user_experience_notification_hint_non_dismiss">Notifications should be non-dismissible</string>
+    <string name="user_experience_photo_button">Choose</string>
+    <string name="user_experience_photo_hint_all">All of the gallery photos should be accessible</string>
+    <string name="user_experience_photo_hint_some">Only some of the gallery photos should be accessible</string>
+    <string name="user_experience_photo_title">Try choosing photos from a gallery</string>
 
     <!-- screen labels -->
     <string name="label_core">Core Functionality</string>
+    <string name="label_grammar">Grammatical Inflection</string>
+    <string name="label_user_experience">User Experience</string>
 </resources>

@@ -5,6 +5,9 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Intent
 import android.os.Build
+import android.os.Handler
+import android.os.Looper
+import android.system.Os
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -23,7 +26,7 @@ import com.example.post34.R
 import java.util.Date
 
 @Composable
-fun CoreScreen() {
+fun CoreScreen(onNextClicked: () -> Unit) {
     Scaffold(
         topBar = { AppBar(name = stringResource(id = Screen.Core.resourceId)) },
         content = {
@@ -35,6 +38,14 @@ fun CoreScreen() {
             ) {
                 AlarmBlock()
                 KillBackgroundProcessBlock(modifier = Modifier.padding(top = 16.dp))
+//                MLockBlock(modifier = Modifier.padding(top = 16.dp))
+
+                Button(
+                    modifier = Modifier.padding(top = 16.dp),
+                    onClick = { onNextClicked.invoke() }
+                ) {
+                    Text(text = stringResource(id = R.string.button_go_next))
+                }
             }
         }
     )
@@ -96,6 +107,32 @@ fun KillBackgroundProcessBlock(
     }
 }
 
+@Composable
+fun MLockBlock(
+    modifier: Modifier = Modifier
+) {
+    Column(modifier) {
+        Text(text = stringResource(id = R.string.core_mlock_hint))
+        
+        Button(onClick = {
+            Os.mlock(1000L, 1024*128)
+            Handler(Looper.getMainLooper()).postDelayed({
+                Os.munlock(1000L, 1024 * 128)
+            }, 10000)
+        }) {
+            Text(text = stringResource(id = R.string.core_mlock_button))
+        }
+
+        Text(
+            text = stringResource(
+                id = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
+                    R.string.core_mlock_restrict
+                else R.string.core_mlock_allow
+            )
+        )
+    }
+}
+
 @Preview(showBackground = true)
 @Composable
 fun AlarmBlockPreview() {
@@ -106,4 +143,10 @@ fun AlarmBlockPreview() {
 @Composable
 fun KillBackgroundProcessBlockPreview() {
     KillBackgroundProcessBlock()
+}
+
+@Preview(showBackground = true)
+@Composable
+fun MLockBlockPreview() {
+    MLockBlock()
 }
