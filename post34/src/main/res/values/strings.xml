@@ -42,5 +42,10 @@
     <!-- screen labels -->
     <string name="label_core">Core Functionality</string>
     <string name="label_grammar">Grammatical Inflection</string>
+    <string name="label_screenshot_detection">Screenshot Detection</string>
     <string name="label_user_experience">User Experience</string>
+
+    <!-- screenshot detection -->
+    <string name="screenshot_noticed">You have been noticed</string>
+    <string name="screenshot_try">Try taking a screenshot</string>
 </resources>

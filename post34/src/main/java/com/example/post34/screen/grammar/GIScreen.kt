@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Button
 import androidx.compose.material.RadioButton
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -28,7 +29,10 @@ import com.example.post34.uistate.GIScreenUiState
 import com.example.post34.viewmodel.GIViewModel
 
 @Composable
-fun GIScreen(viewModel: GIViewModel = viewModel()) {
+fun GIScreen(
+    viewModel: GIViewModel = viewModel(),
+    onNextClicked: () -> Unit
+) {
     val state = viewModel.state.collectAsState()
 
     val context = LocalContext.current
@@ -67,6 +71,13 @@ fun GIScreen(viewModel: GIViewModel = viewModel()) {
 
                 Text(text = stringResource(id = R.string.grammar_title))
                 Text(text = stringResource(id = R.string.grammar_gendered_text))
+
+                Button(
+                    modifier = Modifier.padding(top = 16.dp),
+                    onClick = { onNextClicked.invoke() }
+                ) {
+                    Text(text = stringResource(id = R.string.button_go_next))
+                }
             }
         }
     )

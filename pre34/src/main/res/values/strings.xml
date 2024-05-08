@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Android14Snippet-pre34</string>
+
+    <!-- screen labels -->
+    <string name="label_screenshot_detection">Screenshot Detection</string>
+
+    <!-- screenshot detection -->
+    <string name="screenshot_noticed">You have been noticed</string>
+    <string name="screenshot_try">Try taking a screenshot</string>
+</resources>
