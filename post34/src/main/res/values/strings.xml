@@ -38,12 +38,22 @@
     <string name="user_experience_photo_hint_all">All of the gallery photos should be accessible</string>
     <string name="user_experience_photo_hint_some">Only some of the gallery photos should be accessible</string>
     <string name="user_experience_photo_title">Try choosing photos from a gallery</string>
+    <string name="user_experience_predictive_back">If you unlocked predictive back navigation, you can try it out</string>
 
     <!-- screen labels -->
     <string name="label_core">Core Functionality</string>
     <string name="label_grammar">Grammatical Inflection</string>
+    <string name="label_screen_sharing">App Screen Sharing</string>
     <string name="label_screenshot_detection">Screenshot Detection</string>
     <string name="label_user_experience">User Experience</string>
+
+    <!-- screen sharing -->
+    <string name="screen_sharing_fail">No, you shared an entire screen</string>
+    <string name="screen_sharing_hint">Try sharing an app window</string>
+    <string name="screen_sharing_not_available">App window sharing is not supported in this version of Android</string>
+    <string name="screen_sharing_start">Start window sharing</string>
+    <string name="screen_sharing_stop">Stop window sharing</string>
+    <string name="screen_sharing_success">Good job!</string>
 
     <!-- screenshot detection -->
     <string name="screenshot_noticed">You have been noticed</string>

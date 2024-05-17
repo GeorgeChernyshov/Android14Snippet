@@ -110,6 +110,7 @@ fun InformationBlock(modifier: Modifier = Modifier) {
     Column(modifier) {
         Text(text = stringResource(id = R.string.user_experience_info_data))
         Text(text = stringResource(id = R.string.user_experience_info_font))
+        Text(text = stringResource(id = R.string.user_experience_predictive_back))
     }
 }
 

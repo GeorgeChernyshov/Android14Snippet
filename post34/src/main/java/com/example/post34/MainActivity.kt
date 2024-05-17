@@ -13,8 +13,8 @@ import androidx.navigation.compose.rememberNavController
 import com.example.post34.navigation.Screen
 import com.example.post34.screen.core.CoreScreen
 import com.example.post34.screen.grammar.GIScreen
+import com.example.post34.screen.screensharing.ScreenSharingScreen
 import com.example.post34.screen.screenshots.ScreenshotDetectionActivity
-import com.example.post34.screen.screenshots.ScreenshotDetectionScreen
 import com.example.post34.screen.ux.UserExperienceScreen
 import com.example.post34.theme.Android14SnippetTheme
 
@@ -42,6 +42,12 @@ fun App() {
 
             composable(Screen.UserExperience.route) {
                 UserExperienceScreen {
+                    navController.navigate(Screen.ScreenSharing.route)
+                }
+            }
+
+            composable(Screen.ScreenSharing.route) {
+                ScreenSharingScreen {
                     navController.navigate(Screen.Grammar.route)
                 }
             }
