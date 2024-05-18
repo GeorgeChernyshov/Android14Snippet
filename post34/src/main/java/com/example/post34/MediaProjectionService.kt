@@ -64,7 +64,13 @@ class MediaProjectionService : Service() {
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        when (intent?.extras?.getSerializable(Extras.ACTION, ActionValues::class.java)) {
+        val action = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent?.extras?.getSerializable(Extras.ACTION, ActionValues::class.java)
+        } else {
+            intent?.extras?.getSerializable(Extras.ACTION) as ActionValues
+        }
+
+        when (action) {
             ActionValues.START -> {
                 val channelId = "001"
                 val channelName = "myChannel"
@@ -82,8 +88,13 @@ class MediaProjectionService : Service() {
 
                 startForeground(154, notification, ServiceInfo.FOREGROUND_SERVICE_TYPE_MEDIA_PROJECTION)
 
-                val resultCode = intent.extras!!.getInt(Extras.RESULT_CODE, Activity.RESULT_CANCELED)
-                val data = intent.extras!!.getParcelable(Extras.DATA, Intent::class.java)
+                val resultCode = intent!!.extras!!.getInt(Extras.RESULT_CODE, Activity.RESULT_CANCELED)
+                val data = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    intent.extras!!.getParcelable(Extras.DATA, Intent::class.java)
+                } else {
+                    intent.extras!!.getParcelable(Extras.DATA) as? Intent
+                }
+
                 data?.let { startProjection(resultCode, it) }
             }
 

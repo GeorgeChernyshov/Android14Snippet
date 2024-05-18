@@ -72,11 +72,13 @@ fun GIScreen(
                 Text(text = stringResource(id = R.string.grammar_title))
                 Text(text = stringResource(id = R.string.grammar_gendered_text))
 
-                Button(
-                    modifier = Modifier.padding(top = 16.dp),
-                    onClick = { onNextClicked.invoke() }
-                ) {
-                    Text(text = stringResource(id = R.string.button_go_next))
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+                    Button(
+                        modifier = Modifier.padding(top = 16.dp),
+                        onClick = { onNextClicked.invoke() }
+                    ) {
+                        Text(text = stringResource(id = R.string.button_go_next))
+                    }
                 }
             }
         }

@@ -11,6 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.post34.navigation.Screen
+import com.example.post34.screen.camera.CameraScreen
 import com.example.post34.screen.core.CoreScreen
 import com.example.post34.screen.grammar.GIScreen
 import com.example.post34.screen.screensharing.ScreenSharingScreen
@@ -54,7 +55,15 @@ fun App() {
 
             composable(Screen.Grammar.route) {
                 GIScreen {
-                    context.startActivity(Intent(context, ScreenshotDetectionActivity::class.java))
+                    navController.navigate(Screen.Camera.route)
+                }
+            }
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+                composable(Screen.Camera.route) {
+                    CameraScreen {
+                        context.startActivity(Intent(context, ScreenshotDetectionActivity::class.java))
+                    }
                 }
             }
         }

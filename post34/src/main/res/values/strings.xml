@@ -4,6 +4,11 @@
     <!-- button labels -->
     <string name="button_go_next">Go Next</string>
 
+    <!-- camera screen -->
+    <string name="camera_capture_latency">Capture latency is $s</string>
+    <string name="camera_no_extensions">No camera extensions are available</string>
+    <string name="camera_processing_latency">Processing latency is $s</string>
+
     <!-- core screen -->
     <string name="core_alarm_hint_allow">Alarm should start</string>
     <string name="core_alarm_hint_restrict">Alarm should be not permitted to start</string>
@@ -41,6 +46,7 @@
     <string name="user_experience_predictive_back">If you unlocked predictive back navigation, you can try it out</string>
 
     <!-- screen labels -->
+    <string name="label_camera">Camera and Media</string>
     <string name="label_core">Core Functionality</string>
     <string name="label_grammar">Grammatical Inflection</string>
     <string name="label_screen_sharing">App Screen Sharing</string>
